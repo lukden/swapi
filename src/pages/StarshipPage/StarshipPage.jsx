@@ -13,12 +13,28 @@ const StarshipDetails = (props) => {
       setStarshipDetails(starshipDetails)
     )
   }, [])
-console.log('Correct', starshipDetails);
+
   return ( 
+<div className='ship-details-card'>
+    {starshipDetails.length ? 
   <>
-  {starshipDetails.name}
-  {starshipDetails.model}
-  </> );
+  Name: {starshipDetails.name}
+  <br />
+  Model: {starshipDetails.model}
+  <br />
+  <a href="/">Return</a>
+  </>
+  :
+  <>
+  <div class="d-flex justify-content-center">
+  <div class="spinner-border" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>
+</>
 }
- 
+  </div> );
+}
+
+
 export default StarshipDetails;

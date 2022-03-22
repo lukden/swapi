@@ -1,4 +1,4 @@
-const baseUrl = 'https://www.swapi.dev/api/'
+const baseUrl = 'https://swapi.dev/api/'
 
 export function getAllStarships() {
   return fetch(`${baseUrl}/starships`)
