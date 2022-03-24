@@ -8,10 +8,7 @@ const StarshipDetails = (props) => {
   let location = useLocation()
 
   useEffect(()=> {
-    getDetails(location.state.starship.url)
-    .then(starshipDetails => 
-      setStarshipDetails(starshipDetails)
-    )
+    setStarshipDetails(location.state.starship)
   }, [])
 
   return ( 

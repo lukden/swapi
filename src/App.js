@@ -1,7 +1,7 @@
 import './App.css';
 import Header from './components/Header/Header';
-import Starships from './components/Starships';
-import StarshipDetails from './pages/StarshipPage';
+import Starships from './pages/Starships/Starships';
+import StarshipPage from './pages/StarshipPage/StarshipPage';
 import { Route, Routes } from 'react-router-dom'
 
 
@@ -12,7 +12,7 @@ function App() {
     <Header/>
     <Routes>
       <Route path='/' element={<Starships/>} />
-      <Route path='/starship' element={<StarshipDetails/>} />
+      <Route path='/starship' element={<StarshipPage/>} />
     </Routes>
     </>
   );

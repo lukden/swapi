@@ -11,19 +11,29 @@ const StarshipList = (props) => {
     .then(starshipData => setStarships(starshipData.results))
   }, [])
 
-  return (
-  <>
-    <div className="starship-cards">
-      {starships.map((starship) => (
-      <div className="starship">
-      <Link to='/starship' state={{starship}} key={starship.name}>
-      <div id="starship-model" key={starship.model}></div>
-      </Link>
+  return (  
+    <div className="ship-cards">
+      {starships.length ?
+      <>
+      {starships.map((starship, index) =>
+        <Link to='/starship' state={{starship}} key={index}>
+          <div className='ship-card'> 
+          {starship.name} <br />
+          </div>
+        </Link>
+      )}
+      </>
+      :
+      <>
+      <div class="d-flex justify-content-center">
+        <div class="spinner-border" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
       </div>
-      ))}
+      </>
+      }   
     </div>
-    </>
-  )
+  );
 }
 
 export default StarshipList;
